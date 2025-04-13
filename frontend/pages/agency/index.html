@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/globals.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-6 px-8 md:px-16 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="../../../index.html" class="text-2xl font-bold tracking-tighter text-white">PORTFOLIO</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="../../../index.html" class="nav-link">Home</a>
+                <a href="../about/index.html" class="nav-link">About</a>
+                <a href="../projects/index.html" class="nav-link">Projects</a>
+                <a href="../agency/index.html" class="nav-link active">Agency</a>
+                <a href="../signin/index.html" class="nav-link">Sign In</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-[300vh] bg-black text-white relative overflow-hidden">
+        <!-- Scroll-based transformation container -->
+        <div class="scroll-container fixed top-0 left-0 w-full h-screen">
+            <!-- Initial large shape -->
+            <div class="initial-shape">
+                <div class="morph-shape"></div>
+            </div>
+            
+            <!-- Animated Background Elements -->
+            <div class="animated-bg">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+                <div class="floating-shape shape-5"></div>
+            </div>
+            
+            <!-- Animated Grid -->
+            <div class="animated-grid"></div>
+            
+            <!-- Content that appears during scroll -->
+            <div class="scroll-content">
+                <!-- First scroll stage -->
+                <div class="scroll-stage stage-1">
+                    <div class="geometric-pattern"></div>
+                    <div class="geometric-pattern pattern-2"></div>
+                </div>
+                
+                <!-- Second scroll stage -->
+                <div class="scroll-stage stage-2">
+                    <div class="floating-elements">
+                        <div class="float-element float-1"></div>
+                        <div class="float-element float-2"></div>
+                        <div class="float-element float-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Final stage with text -->
+                <div class="scroll-stage stage-3">
+                    <div class="container mx-auto px-4 text-center relative z-10 pt-32">
+                        <h1 class="text-7xl font-bold mb-6 leading-tight animate-slide-up parallax-text">
+                            We Create<br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 relative">
+                                Digital Experiences
+                                <span class="animated-underline"></span>
+                            </span>
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-delayed parallax-text">
+                            Transforming ideas into reality through innovative design and cutting-edge technology.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up-delayed">
+                            <a href="#services" class="hero-button primary">
+                                Explore Our Work
+                            </a>
+                            <a href="#contact" class="hero-button secondary">
+                                Get in Touch
+                            </a>
+                        </div>
+                        <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
+                            <div class="stat-card animate-fade-in-delayed-1 scroll-reveal">
+                                <div class="text-3xl font-bold text-white mb-2 counter">150+</div>
+                                <div class="text-gray-400">Projects Completed</div>
+                            </div>
+                            <div class="stat-card animate-fade-in-delayed-2 scroll-reveal">
+                                <div class="text-3xl font-bold text-white mb-2 counter">50+</div>
+                                <div class="text-gray-400">Happy Clients</div>
+                            </div>
+                            <div class="stat-card animate-fade-in-delayed-3 scroll-reveal">
+                                <div class="text-3xl font-bold text-white mb-2 counter">10+</div>
+                                <div class="text-gray-400">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer div for scroll -->
+    <div class="h-screen bg-black"></div>
+
+    <!-- Transition Stage -->
+    <div class="transition-stage">
+        <div class="transition-grid"></div>
+        <div class="transition-shapes">
+            <div class="transition-shape shape-1"></div>
+            <div class="transition-shape shape-2"></div>
+            <div class="transition-shape shape-3"></div>
+        </div>
+        <div class="transition-content">
+            <h2 class="text-5xl font-bold text-white text-center mb-8">Ready to Transform Your Vision?</h2>
+            <p class="text-xl text-gray-300 text-center max-w-2xl mx-auto">Let's create something extraordinary together</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Web Design</h3>
+                    <p class="text-gray-600">Creating beautiful and functional websites that engage your audience.</p>
+                </div>
+                <div class="card bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Brand Strategy</h3>
+                    <p class="text-gray-600">Developing unique brand identities that stand out in the market.</p>
+                </div>
+                <div class="card bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Digital Marketing</h3>
+                    <p class="text-gray-600">Growing your online presence through strategic marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 class="text-xl font-bold mb-4">Discovery</h3>
+                    <p class="text-gray-600">Understanding your needs and goals</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 class="text-xl font-bold mb-4">Strategy</h3>
+                    <p class="text-gray-600">Planning the perfect solution</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 class="text-xl font-bold mb-4">Design</h3>
+                    <p class="text-gray-600">Creating beautiful experiences</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3 class="text-xl font-bold mb-4">Launch</h3>
+                    <p class="text-gray-600">Bringing ideas to life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="stat-item">
+                    <div class="stat-number text-4xl font-bold mb-2">150+</div>
+                    <div class="stat-label text-gray-600">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-4xl font-bold mb-2">50+</div>
+                    <div class="stat-label text-gray-600">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-4xl font-bold mb-2">10+</div>
+                    <div class="stat-label text-gray-600">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Let's Create Something Amazing</h2>
+            <p class="text-gray-400 mb-8">Ready to start your next project? Get in touch with us today.</p>
+            <a href="#contact" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition-colors">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html> 

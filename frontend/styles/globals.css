@@ -1,0 +1,305 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --transition-standard: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-gray-900);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-standard);
+}
+
+.cursor-none {
+  cursor: none;
+}
+
+/* Custom Cursor */
+#custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  display: block !important;
+  opacity: 1 !important;
+  top: 0;
+  left: 0;
+  visibility: visible !important;
+}
+
+#custom-cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+  display: block !important;
+  opacity: 1 !important;
+  top: 0;
+  left: 0;
+  visibility: visible !important;
+}
+
+/* White cursor for dark backgrounds */
+body.cursor-white #custom-cursor {
+  background-color: #fff;
+}
+
+body.cursor-white #custom-cursor-follower {
+  border-color: #fff;
+}
+
+/* Custom cursor hover states */
+body.cursor-hover #custom-cursor-follower {
+  width: 60px;
+  height: 60px;
+}
+
+/* Fallback cursor styles */
+body.cursor-none {
+  cursor: none !important;
+}
+
+body:not(.cursor-none) #custom-cursor,
+body:not(.cursor-none) #custom-cursor-follower {
+  display: none !important;
+}
+
+/* Only apply custom cursor on non-touch devices */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  #custom-cursor,
+  #custom-cursor-follower {
+    display: block !important;
+  }
+}
+
+/* Revert to default cursor on touch devices */
+@media (pointer: coarse) {
+  #custom-cursor,
+  #custom-cursor-follower {
+    display: none !important;
+  }
+  
+  .cursor-none {
+    cursor: auto !important;
+  }
+}
+
+/* Navigation styles for all pages */
+.nav-link {
+    color: #000000;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #666666;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+/* For dark backgrounds */
+.navbar-dark .nav-link {
+    color: #ffffff;
+}
+
+/* Mobile navigation styles */
+.mobile-nav-link {
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #666666;
+}
+
+/* Navbar transition styles */
+#navbar {
+    transition: all 0.3s ease;
+}
+
+#navbar.bg-white {
+    background-color: #ffffff;
+}
+
+#navbar.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile menu styles */
+#mobile-menu {
+    transition: transform 0.3s ease;
+}
+
+/* For dark mode navbar */
+.navbar-dark {
+    color: #ffffff;
+}
+
+.navbar-dark .nav-link {
+    color: #ffffff;
+}
+
+.navbar-dark #menu-toggle svg {
+    stroke: #ffffff;
+}
+
+/* Animations */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealText 0.8s forwards;
+}
+
+.reveal-text-delay {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealText 0.8s 0.2s forwards;
+}
+
+.reveal-text-delay-2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealText 0.8s 0.4s forwards;
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 2s infinite;
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform var(--transition-standard);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .reveal-text, .reveal-text-delay, .reveal-text-delay-2 {
+    animation-delay: 0s;
+  }
+}
+
+/* Aspect ratio utilities */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(9 / 16 * 100%);
+}
+
+.aspect-w-4 {
+  position: relative;
+  padding-bottom: calc(5 / 4 * 100%);
+}
+
+.aspect-h-9 > *,
+.aspect-h-5 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Transitions */
+.transition-transform {
+  transition-property: transform;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Add the custom cursor styles to your global CSS */
+/* (Copy the cursor styles from above) */ 

@@ -1,0 +1,24 @@
+portfolio-website/
+├── frontend/
+│   ├── pages/
+│   │   ├── home/
+│   │   ├── about/
+│   │   ├── projects/
+│   │   ├── signin/
+│   │   └── agency/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── icons/
+│   │   └── fonts/
+│   ├── components/
+│   │   ├── navbar/
+│   │   ├── footer/
+│   │   └── cursor/
+│   └── styles/
+│       └── globals.css
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── models/
+│   └── config/
+└── index.html 

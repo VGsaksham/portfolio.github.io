@@ -1,0 +1,56 @@
+/* About page specific styles */
+.skill-bar {
+    height: 4px;
+    background-color: #e5e7eb;
+    margin-top: 8px;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #000;
+    transition: width 1s ease-in-out;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 28px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 24px;
+    width: 2px;
+    height: calc(100% - 24px);
+    background-color: #e5e7eb;
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* Animation for skill bars */
+.animate-skill {
+    animation: skillAnimation 1.5s ease-out forwards;
+}
+
+@keyframes skillAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--skill-percent);
+    }
+} 

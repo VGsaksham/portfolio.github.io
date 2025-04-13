@@ -1,0 +1,102 @@
+/* Projects page specific styles */
+
+/* Filter buttons */
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #000;
+    background-color: transparent;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Project items */
+.project-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-item.hidden {
+    display: none;
+}
+
+.project-item.fade {
+    opacity: 0.5;
+}
+
+/* Project hover effects */
+.project-item .aspect-w-4 {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+.project-item .aspect-w-4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f4f6;
+}
+
+/* Process steps */
+.process-step {
+    position: relative;
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: -20px;
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+}
+
+@media (max-width: 768px) {
+    .process-step:not(:last-child)::after {
+        display: none;
+    }
+}
+
+/* Animation for project items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-project {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Staggered animation for project grid */
+.projects-grid {
+    perspective: 1000px;
+}
+
+.projects-grid .project-item:nth-child(1) { animation-delay: 0.1s; }
+.projects-grid .project-item:nth-child(2) { animation-delay: 0.2s; }
+.projects-grid .project-item:nth-child(3) { animation-delay: 0.3s; }
+.projects-grid .project-item:nth-child(4) { animation-delay: 0.4s; }
+.projects-grid .project-item:nth-child(5) { animation-delay: 0.5s; }
+.projects-grid .project-item:nth-child(6) { animation-delay: 0.6s; } 
